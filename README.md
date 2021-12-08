@@ -17,11 +17,13 @@ docker cp dvdrental.zip postgres:/
 docker exec -it postgres unzip dvdrental.zip
 ```
 
-### 4.コンテナ内のpostgreSQLを起動,dvdrentalを作成する。 <br> 
+### 4.コンテナ内のpostgreSQLを起動,dvdrentalを作成する。最後に\qコマンドでposgresから出る <br> 
 ```
 docker exec -it postgres psql
 
 CREATE DATABASE dvdrental;
+
+\q
 ```
 
 ### 5.コンテナ内でdvdrental.tarに記載してあるサンプルデータ作成SQLを実行する <br> 
