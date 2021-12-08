@@ -2,12 +2,12 @@
 
 ## コマンド手順
 
-### 1.Docker composeを立ち上げる <br>
+### 1.Docker composeを起動して新たにコンテナを立ち上げる <br>
 ```
 docker-compose up -d
 ```
 
-### 2.立ち上げたコンテナにdvdrental.zipをコピーする <br>
+### 2.立ち上げたコンテナに同ディレクトリ内にあるdvdrental.zipをコピーする <br>
 ```
 docker cp dvdrental.zip postgres:/
 ```
@@ -24,7 +24,7 @@ docker exec -it postgres psql
 CREATE DATABASE dvdrental;
 ```
 
-### 5.dvdrental.tar をしてコンテナ内でサンプルデータ作成SQLを実行する <br> 
+### 5.コンテナ内でdvdrental.tarに記載してあるサンプルデータ作成SQLを実行する <br> 
 ```
-pg_restore -U postgres -d dvdrental dvdrental.tar  
+docker exec -it postgres pg_restore -U root -d dvdrental dvdrental.tar 
 ```
