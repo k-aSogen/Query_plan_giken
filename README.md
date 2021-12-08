@@ -4,7 +4,7 @@
 
 ### 1.Docker composeを立ち上げる <br>
 ```
-docker-compose up -d　<br> 
+docker-compose up -d
 ```
 
 ### 2.立ち上げたコンテナにdvdrental.zipをコピーする <br>
