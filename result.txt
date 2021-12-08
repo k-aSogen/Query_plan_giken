@@ -1,7 +1,0 @@
-Sort  (cost=61.97..63.48 rows=603 width=84)"
-Sort Key: address.city_id"
-Hash Join  (cost=18.50..34.12 rows=603 width=84)"
-Hash Cond: (address.city_id = city.city_id)"
-Seq Scan on address  (cost=0.00..14.03 rows=603 width=61)"
-Hash  (cost=11.00..11.00 rows=600 width=23)"
-Seq Scan on city  (cost=0.00..11.00 rows=600 width=23)"
