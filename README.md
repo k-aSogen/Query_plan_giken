@@ -30,3 +30,9 @@ CREATE DATABASE dvdrental;
 ```
 docker exec -it postgres pg_restore -U root -d dvdrental dvdrental.tar 
 ```
+
+###  本環境ER図
+
+![ER図](https://self-development.info/wp-content/uploads/2020/12/printable-postgresql-sample-database-diagram_page-0001.png)
+
+ 
