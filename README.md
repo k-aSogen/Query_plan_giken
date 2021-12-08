@@ -13,11 +13,11 @@ docker cp dvdrental.zip postgres:/
 ---
 docker exec -it postgres unzip dvdrental.zip
 ---
-## コンテナ内のpostgreSQLを起動 <br> 
+## 4.コンテナ内のpostgreSQLを起動 <br> 
 ---
 docker exec -it postgres psql
 ---
-## dvdrental.tar をしてコンテナ内でサンプルデータ作成SQLを実行する <br> 
+## 5.dvdrental.tar をしてコンテナ内でサンプルデータ作成SQLを実行する <br> 
 ---
 pg_restore -U postgres -d dvdrental dvdrental.tar  
 ---
