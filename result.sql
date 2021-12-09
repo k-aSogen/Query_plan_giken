@@ -27,7 +27,26 @@ Seq Scan on actor (cost=0.00..4.00 rows=200 width=25)
 ノードは主にテーブルスキャンノード、結合ノード、ソート等を行うその他ノードで分類され、
 テーブルスキャンノード、結合ノード、その他ノードの順に実行される。
 */
+EXPLAIN select * from address inner join city ON address.city_id=city.city_id ORDER BY city.city_id ASC;
 
+/*
+Sort (cost=68.67..70.18 rows=603 width=84)
+Sort Key: address.city_id
+Hash Join (cost=18.50..40.82 rows=603 width=84)
+Hash Cond: (address.city_id = city.city_id)
+Seq Scan on address (cost=0.00..14.03 rows=603 width=61)
+Hash (cost=11.00..11.00 rows=600 width=23)
+Seq Scan on city (cost=0.00..11.00 rows=600 width=23)
+
+【各行の説明】
+7行目：city(内側)テーブルのデータを取り出しています
+6行目：ハッシュを作成し、
+5行目：address(外側)テーブルのデータを取り出す
+4行目：ハッシュと外側テーブルの結合キー(city_id)
+3行目：結合
+2行目：ソートのキーを決定
+1行目：取得結果をソート
+*/
 
 
 
